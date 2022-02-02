@@ -1,0 +1,22 @@
+- Header "WestCoast Education"
+- Sammanfattning
+    - Klassrumskurser
+    - On-Demand-kurser
+- Navigationsbar
+    - Sök bland kurser
+        - Klassrumskurser
+        - OnDemand-Kurser
+        - Alla kurser
+    - Mina sidor
+        - Redigera profil
+        - Mina kurser
+        - Betyg
+        - Kontakta skolan
+    - Administration
+        - Lägg till kurser
+        - Lägg till eller ta bort lärare
+        - Lägg till eller ta bort elev
+        - kontakta (sök?) elev eller lärare
+        
+- Chatt (eventuellt i navbar)
+- Footer med kontaktinfo mm

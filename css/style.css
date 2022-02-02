@@ -1,0 +1,72 @@
+:root {
+  --bg-color: #1f2747;
+  --primary-color: #d63100;
+  --highlight-color: #a4dcf4;
+  /* överväg att skita i highlight color helt */
+}
+
+body {
+  background: var(--bg-color);
+  font-style: roboto;
+}
+
+.background {
+  background: var(--bg-color);
+}
+
+.logo {
+  background: white;
+  width: 264px;
+  height: 112px;
+  margin: 32px;
+  text-align: center;
+  font-style: roboto;
+}
+
+.second-word {
+  color: var(--primary-color);
+}
+
+.logo h1 {
+  font-size: 42px;
+  color: var(--bg-color);
+}
+
+.logo-container {
+  height: 0.5em;
+}
+
+.bg-pic {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+.distance {
+  height: 16em;
+}
+
+.small-distance {
+  height: 6.5em;
+}
+
+.logo-link {
+  margin: 0;
+  padding: 0;
+  /* width: 264px;
+  height: 112px;
+  margin: 32px; */
+}
+
+h1 {
+  font-style: roboto;
+}
+
+p {
+  font-style: roboto;
+}
