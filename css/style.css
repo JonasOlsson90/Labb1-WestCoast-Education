@@ -80,12 +80,23 @@ p {
   width: 18rem;
 }
 
-@media only screen and (min-width: 1400px) {
-  .custom-card {
-    width: 22rem;
+.custom-sub-card {
+  width: 14rem;
+}
+
+@media only screen and (min-width: 668px) {
+  .course-cards {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
-.custom-sub-card {
-  width: 14rem;
+@media only screen and (min-width: 1440px) {
+  .custom-card {
+    width: 22rem;
+  }
+  .course-cards {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
