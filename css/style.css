@@ -63,9 +63,6 @@ a {
 .logo-link {
   margin: 0;
   padding: 0;
-  /* width: 264px;
-  height: 112px;
-  margin: 32px; */
 }
 
 h1 {
@@ -82,6 +79,18 @@ p {
 
 .custom-sub-card {
   width: 14rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 18rem;
+}
+
+.custom-sub-card .card-img-top {
+  height: 200px;
+  background: #212529;
+  object-fit: contain;
 }
 
 @media only screen and (min-width: 668px) {
