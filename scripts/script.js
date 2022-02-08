@@ -1,18 +1,19 @@
 // constants
 const courses = [];
+const cart = [];
 
 // Classes
 class Course {
-    constructor(courseNum, image, altImage, title, info, length, buttonText, price, orders) {
-        this.courseNum = courseNum;
-        this.image = image;
-        this.altImage = altImage;
-        this.title = title;
-        this.info = info;
-        this.length = length;
-        this.buttonText = buttonText;
-        this.price = price;
-        this.orders = orders;
+    constructor(object) {
+        this.courseNum = object.courseNum;
+        this.image = object.image;
+        this.altImage = object.altImage;
+        this.title = object.title;
+        this.info = object.info;
+        this.length = object.length;
+        this.buttonText = object.buttonText;
+        this.price = object.price;
+        this.orders = object.orders;
     }
 }
 
@@ -20,7 +21,6 @@ class Course {
 onload = function () {
     navigate('pages/start.html');
     loadCourses();
-    //createCards();
 }
 
 async function navigate(path, callback1 = null, callback2 = null) {
@@ -41,9 +41,7 @@ async function navigate(path, callback1 = null, callback2 = null) {
 async function loadCourses() {
     let response = await fetch('json/courses.json');
 
-    if (response.ok) {    
-    // if HTTP-status is 200-299
-    // get the response body (the method explained below)
+    if (response.ok) {
         let json = await response.json();
         addCourses(json);
     } else {
@@ -53,7 +51,7 @@ async function loadCourses() {
 
 function addCourses(json) {
     for (i = 0; i < json.length; i++){
-        courses.push(new Course(json[i].courseNum, json[i].image, json[i].altImage, json[i].title, json[i].info, json[i].length, json[i].buttonText, json[i].price, json[i].orders));
+        courses.push(new Course(json[i]));
     }
 }
 
@@ -123,7 +121,7 @@ function createFrontCard(course) {
             <div class="card-body bg-dark text-center">
                 <h5 class="card-title text-light">${course.title}</h5>
                 <p class="card-text text-light">${course.info}</p>
-                <a href="#" class="btn btn-primary mt-auto">${course.buttonText}</a>
+                <a onclick="addToCart(${course.courseNum})" class="btn btn-primary mt-auto">${course.buttonText}</a>
             </div>
         </div>`;
 }
@@ -136,9 +134,17 @@ function createRegularCard(course) {
                 <div class="card-body bg-dark text-center">
                     <h5 class="card-title text-light">${course.title}</h5>
                     <p class="card-text text-light">${course.info}</p>
-                    <a href="#" class="btn btn-primary mt-auto">${course.buttonText}</a>
+                    <a onclick="addToCart(${course.courseNum})" class="btn btn-primary mt-auto">${course.buttonText}</a>
                     <p class="card-text text-light mt-1 mb-0">${course.price} SEK</p>
                 </div>
             </div>
         </div>`;
+}
+
+function addToCart(id) {
+    if (cart.includes(id)) {
+        alert("DEN FINNS REDAN FÖR I HELVETE!!! SLUTA TRYCKA!")
+        return;
+    }
+    cart.push(id);
 }
