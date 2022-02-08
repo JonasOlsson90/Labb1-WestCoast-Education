@@ -1,0 +1,48 @@
+[
+    {
+        "courseNum": 1,
+        "title": "Grundläggande datorkunskap",
+        "info": "Känner du dig utanför i den digitala världen? Lär dig grundläggande datorkunskap så att du kan hänga med. Passar alla åldrar.",
+        "length": 8,
+        "image": "https://images.pexels.com/photos/159533/kid-notebook-computer-learns-159533.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "imageAlt": "Barn vid dator",
+        "buttonText": "Lägg till",
+        "price": 599,
+        "orders": 35
+    },
+
+    {
+        "courseNum": 2,
+        "title": "Cybersoldat",
+        "info": "Vill du försvara Sverige genom att mota Olle i the grid?",
+        "length": 104,
+        "image": "https://images.pexels.com/photos/8108098/pexels-photo-8108098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "imageAlt": "Superhaxxorsoldat",
+        "buttonText": "Lägg till",
+        "price": 52000,
+        "orders": 1337
+    },
+
+    {
+        "courseNum": 3,
+        "title": ".NET-utvecklare",
+        "info": "Ett ramverk att sämja dem,<br> ett ramverk att främja dem,<br>ett ramverkatt högt i ljusets vida rike tämja dem",
+        "length": 52,
+        "image": "https://images.pexels.com/photos/4567339/pexels-photo-4567339.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "imageAlt": "Windowstangentbord",
+        "buttonText": "Lägg till",
+        "price": 15000,
+        "orders": 400
+    },
+    {
+        "courseNum": 4,
+        "title": "IT-projektledare",
+        "info": "Brinner du för att leda IT-projekt?",
+        "length": 15,
+        "image": "https://images.pexels.com/photos/4342352/pexels-photo-4342352.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "imageAlt": "En riktig chef.",
+        "buttonText": "Lägg till",
+        "price": 100000,
+        "orders": 125
+    }
+]

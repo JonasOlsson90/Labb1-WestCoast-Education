@@ -20,3 +20,9 @@
         
 - Chatt (eventuellt i navbar)
 - Footer med kontaktinfo mm
+
+
+Inför imorgon:
+    Skapa metod i js-filen som skapar html 
+    istället för att läsa från courses.html.
+    Javascript json fetch.

@@ -84,7 +84,7 @@ p {
 .card-body {
   display: flex;
   flex-direction: column;
-  height: 18rem;
+  height: 20rem;
 }
 
 .custom-sub-card .card-img-top {
