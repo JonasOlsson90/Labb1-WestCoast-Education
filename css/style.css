@@ -84,6 +84,10 @@ p {
 .card-body {
   display: flex;
   flex-direction: column;
+  height: 14rem;
+}
+
+.custom-sub-card .card-body {
   height: 20rem;
 }
 
@@ -91,6 +95,10 @@ p {
   height: 200px;
   background: #212529;
   object-fit: contain;
+}
+
+.list-group-item {
+  width: 40rem;
 }
 
 @media only screen and (min-width: 668px) {

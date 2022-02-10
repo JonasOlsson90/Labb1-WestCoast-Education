@@ -148,3 +148,31 @@ function addToCart(id) {
     }
     cart.push(id);
 }
+
+function createCartItems() {
+    let tempCourses = courses.sort(function (a, b) { return b.title < a.title ? 1 : -1 });
+    let html = `<ol class="list-group bg-dark">`;
+    for (let i = 0; i < tempCourses.length; i++) {
+        let element = tempCourses[i];
+        if (cart.includes(element.courseNum)) {
+            html += ` <li class="d-flex justify-content-between list-group-item bg-dark text-light p-3">
+            <div>${element.title}</div> <div>${element.price}SEK &emsp;
+            <button onClick="removeCourseFromCart(${element.courseNum})" class="btn bg-light float-end">Ta bort</button></li></div>`;
+        }
+    }
+    html += `</ol>`;
+
+    if (cart.length === 0) {
+        html = `<h2 class="text-light">Kundvagnen är tom</h2>`
+    }
+
+    document.getElementById('displayCart').innerHTML = html;
+}
+
+function removeCourseFromCart(id) {
+    let index = cart.indexOf(id);
+    if (index != -1) {
+        cart.splice(index, 1);
+    }
+    createCartItems();
+}
