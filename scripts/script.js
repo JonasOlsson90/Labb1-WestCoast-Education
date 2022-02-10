@@ -152,14 +152,19 @@ function addToCart(id) {
 function createCartItems() {
     let tempCourses = courses.sort(function (a, b) { return b.title < a.title ? 1 : -1 });
     let html = `<ol class="list-group bg-dark">`;
+    let sum = 0;
     for (let i = 0; i < tempCourses.length; i++) {
         let element = tempCourses[i];
         if (cart.includes(element.courseNum)) {
             html += ` <li class="d-flex justify-content-between list-group-item bg-dark text-light p-3">
             <div>${element.title}</div> <div>${element.price}SEK &emsp;
             <button onClick="removeCourseFromCart(${element.courseNum})" class="btn bg-light float-end">Ta bort</button></li></div>`;
+            sum += element.price;
         }
     }
+    html += `<li class="d-flex justify-content-between list-group-item bg-dark text-light p-3">
+            <div>SUMMA</div> <div>${sum}SEK &emsp;
+            <button onClick="checkOut()" class="btn bg-success float-end">Köp</button></li></div>`;
     html += `</ol>`;
 
     if (cart.length === 0) {
@@ -175,4 +180,10 @@ function removeCourseFromCart(id) {
         cart.splice(index, 1);
     }
     createCartItems();
+}
+
+function checkOut() {
+    cart.length = 0;
+    createCartItems();
+    alert("Köp genomfört!")
 }

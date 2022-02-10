@@ -98,13 +98,16 @@ p {
 }
 
 .list-group-item {
-  width: 40rem;
+  width: 25rem;
 }
 
 @media only screen and (min-width: 668px) {
   .course-cards {
     margin-left: 10%;
     margin-right: 10%;
+  }
+  .list-group-item {
+    width: 35rem;
   }
 }
 
@@ -115,5 +118,8 @@ p {
   .course-cards {
     margin-left: 20%;
     margin-right: 20%;
+  }
+  .list-group-item {
+    width: 40rem;
   }
 }
