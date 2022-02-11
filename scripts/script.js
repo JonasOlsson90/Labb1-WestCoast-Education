@@ -205,6 +205,13 @@ function createNewCourse() {
         alert('Kursen måste ha ett nummer.');
         return;
     }
+    for (let i = 0; i < courses.length; i++) {
+        const course = courses[i];
+        if (course.courseNum === courseNum) {
+            alert('Kursnumret Måste vara unikt.');
+            return;
+        }
+    }
     if (courseTitle.length < 1) {
         alert('Kursen måste ha en titel.');
         return;
@@ -226,10 +233,24 @@ function createNewCourse() {
             alert('Kursen måste ha en bildtext när den har en bild.')
             return;
         }
+    } else {
+        courseImage = 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
+        courseImageAlt = 'Default Image, matrix code';
     }
     if (coursePrice.length < 1) {
         alert('Kursen måste ha ett pris.');
         return;
     }
 
+    courses.push(new Course({
+        "courseNum": parseInt(courseNum, 10),
+        "title": courseTitle,
+        "info": courseDescription,
+        "length": parseInt(courseLength, 10),
+        "image": courseImage,
+        "imageAlt": courseImageAlt,
+        "buttonText": "Lägg till",
+        "price": parseInt(coursePrice, 10),
+        "orders": 0
+    }));
 }
