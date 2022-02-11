@@ -1,8 +1,10 @@
-// constants
+// Constants
+
 const courses = [];
 const cart = [];
 
 // Classes
+
 class Course {
     constructor(object) {
         this.courseNum = object.courseNum;
@@ -18,6 +20,7 @@ class Course {
 }
 
 // Navigation
+
 onload = function () {
     navigate('pages/start.html');
     loadCourses();
@@ -143,7 +146,7 @@ function createRegularCard(course) {
 
 function addToCart(id) {
     if (cart.includes(id)) {
-        alert("DEN FINNS REDAN FÖR I HELVETE!!! SLUTA TRYCKA!")
+        alert("Kursen äfinns redan i din varukorg. SLUTA TRYCKA!")
         return;
     }
     cart.push(id);
@@ -183,7 +186,50 @@ function removeCourseFromCart(id) {
 }
 
 function checkOut() {
-    cart.length = 0;
+    cart.splice(0, cart.length)
     createCartItems();
     alert("Köp genomfört!")
+}
+
+
+function createNewCourse() {
+    let courseNum = document.getElementById("courseNum").value;
+    let courseTitle = document.getElementById("courseTitle").value;    
+    let courseDescription = document.getElementById("courseDescription").value;
+    let courseLength = document.getElementById("courseLength").value;
+    let courseImage = document.getElementById("courseImage").value;
+    let courseImageAlt = document.getElementById("courseImageAlt").value;
+    let coursePrice = document.getElementById("coursePrice").value;
+    
+    if (courseNum.length < 1) {
+        alert('Kursen måste ha ett nummer.');
+        return;
+    }
+    if (courseTitle.length < 1) {
+        alert('Kursen måste ha en titel.');
+        return;
+    }
+    if (courseDescription.length < 1) {
+        alert('Kursen måste ha en beskrivning.');
+        return;
+    }
+    if (courseDescription.length > 120) {
+        alert('Beskrivningen är för lång. Uttryck dig mer kortfattat.');
+        return;
+    }
+    if (courseLength.length < 1) {
+        alert('Kursen måste ha en längd.');
+        return;
+    }
+    if (courseImage.length > 0) {
+        if (courseImageAlt.length < 1) {
+            alert('Kursen måste ha en bildtext när den har en bild.')
+            return;
+        }
+    }
+    if (coursePrice.length < 1) {
+        alert('Kursen måste ha ett pris.');
+        return;
+    }
+
 }

@@ -101,6 +101,14 @@ p {
   width: 25rem;
 }
 
+.modal-content {
+  background-color: #212529;
+}
+
+.input-group-text {
+  width: 8em;
+}
+
 @media only screen and (min-width: 668px) {
   .course-cards {
     margin-left: 10%;
