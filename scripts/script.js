@@ -194,11 +194,11 @@ function checkOut() {
 
 function createNewCourse() {
     let courseNum = document.getElementById("courseNum").value;
-    let courseTitle = document.getElementById("courseTitle").value;    
-    let courseDescription = document.getElementById("courseDescription").value;
+    let courseTitle = document.getElementById("courseTitle").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;    
+    let courseDescription = document.getElementById("courseDescription").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
     let courseLength = document.getElementById("courseLength").value;
-    let courseImage = document.getElementById("courseImage").value;
-    let courseImageAlt = document.getElementById("courseImageAlt").value;
+    let courseImage = document.getElementById("courseImage").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
+    let courseImageAlt = document.getElementById("courseImageAlt").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
     let coursePrice = document.getElementById("coursePrice").value;
     
     if (courseNum.length < 1) {
@@ -207,7 +207,7 @@ function createNewCourse() {
     }
     for (let i = 0; i < courses.length; i++) {
         const course = courses[i];
-        if (course.courseNum === courseNum) {
+        if (course.courseNum === parseInt(courseNum, 10)) {
             alert('Kursnumret Måste vara unikt.');
             return;
         }
@@ -253,4 +253,21 @@ function createNewCourse() {
         "price": parseInt(coursePrice, 10),
         "orders": 0
     }));
+
+    createFrontCards();
+    createRegularCards();
+
+    courseAdded();
+}
+
+function courseAdded() {
+    document.getElementById("courseNum").value = '';
+    document.getElementById("courseTitle").value = '';
+    document.getElementById("courseDescription").value = '';
+    document.getElementById("courseLength").value = '';
+    document.getElementById("courseImage").value = '';
+    document.getElementById("courseImageAlt").value = '';
+    document.getElementById("coursePrice").value = '';
+
+    alert('Kursen är nu tillagd');
 }
