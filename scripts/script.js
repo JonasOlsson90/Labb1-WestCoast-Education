@@ -9,7 +9,7 @@ class Course {
     constructor(object) {
         this.courseNum = object.courseNum;
         this.image = object.image;
-        this.altImage = object.altImage;
+        this.imageAlt = object.imageAlt;
         this.title = object.title;
         this.info = object.info;
         this.length = object.length;
@@ -194,11 +194,11 @@ function checkOut() {
 
 function createNewCourse() {
     let courseNum = document.getElementById("courseNum").value;
-    let courseTitle = document.getElementById("courseTitle").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;    
-    let courseDescription = document.getElementById("courseDescription").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
+    let courseTitle = document.getElementById("courseTitle").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");   
+    let courseDescription = document.getElementById("courseDescription").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     let courseLength = document.getElementById("courseLength").value;
-    let courseImage = document.getElementById("courseImage").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
-    let courseImageAlt = document.getElementById("courseImageAlt").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
+    let courseImage = document.getElementById("courseImage").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    let courseImageAlt = document.getElementById("courseImageAlt").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     let coursePrice = document.getElementById("coursePrice").value;
     
     if (courseNum.length < 1) {
