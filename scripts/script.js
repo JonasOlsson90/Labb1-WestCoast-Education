@@ -133,7 +133,7 @@ function createFrontCard(course) {
 function createRegularCard(course) {
     return ` <div class="col">    
             <div class="card custom-sub-card p-0 mx-auto mb-5">
-                <img src="${course.image}" class="card-img-top" alt="${course.imageAlt}">
+                <img src="${course.image}" class="card-img-top text-light" alt="${course.imageAlt}">
                 <div class="card-body bg-dark text-center">
                     <h5 class="card-title text-light">${course.title}</h5>
                     <p class="card-text text-light">${course.info}</p>
@@ -254,10 +254,10 @@ function createNewCourse() {
         "orders": 0
     }));
 
-    createFrontCards();
-    createRegularCards();
-
     courseAdded();
+
+    createFrontCards();
+    createRegularCards();    
 }
 
 function courseAdded() {
