@@ -197,8 +197,8 @@ function createNewCourse() {
     let courseTitle = document.getElementById("courseTitle").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");   
     let courseDescription = document.getElementById("courseDescription").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     let courseLength = document.getElementById("courseLength").value;
-    let courseImage = document.getElementById("courseImage").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    let courseImageAlt = document.getElementById("courseImageAlt").value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    let courseImage = document.getElementById("courseImage").value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    let courseImageAlt = document.getElementById("courseImageAlt").value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     let coursePrice = document.getElementById("coursePrice").value;
     
     if (courseNum.length < 1) {
