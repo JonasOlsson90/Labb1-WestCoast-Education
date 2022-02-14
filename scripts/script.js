@@ -146,7 +146,7 @@ function createRegularCard(course) {
 
 function addToCart(id) {
     if (cart.includes(id)) {
-        alert("Kursen äfinns redan i din varukorg. SLUTA TRYCKA!")
+        alert("Kursen är redan tillagd i varukorgen.")
         return;
     }
     cart.push(id);
@@ -254,10 +254,12 @@ function createNewCourse() {
         "orders": 0
     }));
 
-    courseAdded();
+    if (document.getElementById('frontCards') !== null) {
+        createFrontCards();
+        createRegularCards();
+    }
 
-    createFrontCards();
-    createRegularCards();    
+    courseAdded();    
 }
 
 function courseAdded() {
